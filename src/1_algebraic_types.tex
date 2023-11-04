@@ -159,6 +159,9 @@
         \item $\int \frac{1}{\sqrt{x^2 + a^2}}\ \mathrm{d}x = \ln |\sqrt{x^2 + a^2} + x| + c$
         \item $\int \frac{1}{\sqrt{x^2 - a^2}}\ \mathrm{d}x = \ln |\sqrt{x^2 - a^2} + x| + c$
         \item $\int \frac{1}{\sqrt{a^2 - x^2}}\ \mathrm{d}x = \arcsin(\frac{x}{a}) + c$
+        \item $\int \sqrt{x^{2} + a^{2}}\ \mathrm{d}x = \frac{x}{2} \sqrt{x^{2} + a^{2}} + \frac{a^{2}}{2} \ln |\sqrt{x^{2} + a^{2}} + x| + c$
+        \item $\int \sqrt{x^{2}  a^{2}}\ \mathrm{d}x = \frac{x}{2} \sqrt{x^{2} - a^{2}} - \frac{a^{2}}{2} \ln |\sqrt{x^{2} - a^{2}} + x| + c$
+        \item $\int \sqrt{a^{2} - x^{2}}\ \mathrm{d}x = \frac{x}{2} \sqrt{a^{2} - x^{2}} + \frac{a^{2}}{2} \arcsin(\frac{x}{a}) + c$
       \end{enumerate}
 
     \subsubsection{Type 4: $0\degree$ Polynomial over $\sqrt{2\degree}$ Polynomial}
@@ -178,3 +181,46 @@
           & = \frac{1}{\sqrt{2}} \int \frac{\mathrm{d}x}{(x + \frac{1}{2})^2 + (\frac{\sqrt{3}}{2})^2} & \\
           & = \frac{1}{\sqrt{2}} \ln |\sqrt{x^2 + x + \frac{3}{2}} + x + \frac{1}{2}| + c 
         \end{flalign*}
+
+    \subsubsection{Type 5: $1\degree$ Polynomial over $\sqrt{2\degree}$ Polynomial}
+
+      \begin{equation}
+        \int \frac{Mx + N}{\sqrt{Ax^{2} + Bx + C}} \mathrm{d}x
+      \end{equation}
+
+      \begin{center}
+        \textbf{Rule:} Restructure the nominator as $P \frac{\mathrm{d}}{\mathrm{d}x} (denominator)^{2} + Q$ and apply type 4 as necessary.
+      \end{center}
+
+      \textbf{Examples:}
+
+      \begin{flalign*}
+        \int \frac{2x + 3}{\sqrt{3x^{2} - 12x + 27}} \mathrm{d}x
+        & = \frac{1}{\sqrt{3}} \int \frac{2x + 3}{\sqrt{x^{2} - 4x + 9}} \mathrm{d}x & \\
+        & = \frac{1}{\sqrt{3}} \int \frac{2x-4}{\sqrt{x^{2} - 4x + 9}} \mathrm{d}x + \frac{7}{\sqrt{3}} \int \frac{\mathrm{d}x}{\sqrt{(x - 2)^{2} + (\sqrt{3})^{2}}} \\
+        & = \frac{2}{\sqrt{3}} \sqrt{x^{2} - 4x + 9} + \frac{7}{\sqrt{3}} \ln |\sqrt{x^{2} - 4x + 9} + x - 2| + c
+      \end{flalign*}
+
+
+    \subsubsection{Type 6: $2\degree$ Polynomial over $\sqrt{2\degree}$ Polynomial}
+
+      \begin{equation}
+        \int \frac{Mx^{2} + Nx + L}{\sqrt{Ax^{2} + Bx + C}} \mathrm{d}x
+      \end{equation}
+
+      \begin{center}
+        \textbf{Rule:} Restructure the nominator as $P (denominator)^{2} + Q \frac{\mathrm{d}}{\mathrm{d}x} (denominator)^{2} + R$ and apply types 4 and 5 as necessary.
+      \end{center}
+
+      \textbf{Examples:}
+
+      \begin{flalign*}
+        \int \frac{3x^{2} + 7x + 2}{\sqrt{x^{2} + 4x + 13}} \mathrm{d}x
+        & = 3 \int \sqrt{x^{2} + 4x + 13}\ \mathrm{d}x - \frac{5}{2} \int \frac{2x + 4}{\sqrt{x^{2} + 4x + 13}} \mathrm{d}x - 27 \int \frac{\mathrm{d}x}{}\sqrt{x^{2} + 4x + 13} & \\
+        & = 3 \int \sqrt{(x + 2)^{2} + 3^{2}}\ \mathrm{d}x - \frac{5}{2} \times 2 \sqrt{x^{2} + 4x + 13} - 27 \int \frac{\mathrm{d}x}{\sqrt{(x + 2)^{2} + 3^{2}}} \\
+        & = 3 \left[ \frac{x + 2}{2} \sqrt{x^{2} + 4x + 13} + \frac{3^{2}}{2} \ln |\sqrt{x^{2} + 4x + 13} + x + 2| \right] \\
+        & \quad  - 5 \sqrt{x^{2} + 4x + 13} - 27 \ln |\sqrt{x^{2} + 4x + 13} + x + 2| + c \\
+        & = \frac{3(x + 2)}{2} \sqrt{x^{2} + 4x + 13} + \frac{27}{2} \ln |\sqrt{x^{2} + 4x + 13} + x + 2| \\
+        & \quad  - 5 \sqrt{x^{2} + 4x + 13} - 27 \ln |\sqrt{x^{2} + 4x + 13} + x + 2| + c \\
+        & = \frac{3x - 4}{2} \sqrt{x^{2} + 4x + 13} - \frac{27}{2} \ln |\sqrt{x^{2} + 4x + 13} + x + 2| + c
+      \end{flalign*}
