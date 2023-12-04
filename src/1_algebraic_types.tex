@@ -239,5 +239,26 @@
         & \int \frac{4x + 3}{2x - 1} \mathrm{d}x & let\ 2x - 1 = z\ &\ \rightarrow 2x = z + 1\\
         & = \frac{1}{2} \int \frac{2z + 5}{z} \mathrm{d}z & \mathrm{d}x = \frac{1}{2} \mathrm{d}z\ &\ \rightarrow 4x + 3= 2z + 5 \\
         & = \frac{1}{2} \int 2 \mathrm{d}z + \frac{5}{2} \int \frac{\mathrm{d}z}{z} &&\\
-        & = z + \frac{5}{2} \ln{|z|} + c &&
+        & = z + \frac{5}{2} \ln{|z|} + c &&\\
+        & = 2x + \frac{5}{2} \ln{|2x - 1|} + c
+      \end{align*}
+
+      \subsection{Type 8: $1\degree$ Polynomial multiplied or divided by $\sqrt{1\degree}$ Polynomial}
+
+      \begin{equation}
+        \int \frac{ax + b}{\sqrt{cx + f}} \mathrm{d}x \ or, \ \int (ax + b)\sqrt{cx + f} \mathrm{d}x \ or, \ \int \frac{\mathrm{d}x}{(ax + b)\sqrt{cx + f}}
+      \end{equation}
+
+      \begin{center}
+        \textbf{Rule:} Let $cx + f$ be $z^{2}$, and apply type 4 and other basic formulas as necessary
+      \end{center}
+
+      Examples:
+
+      \begin{align*}
+        & \int \frac{4x + 3}{\sqrt{2x - 1}} \mathrm{d}x & let\ 2x - 1 = z^{2}\ &\\
+        & = \int \frac{2z^{2} + 5}{\cancel{z}} \cancel{z}\mathrm{d}z & 2\mathrm{d}x = 2z\mathrm{d}z\ &\ \rightarrow \mathrm{d}x = z\mathrm{d}z \\
+        & = \int 2z^{2} + 5 \mathrm{d}z &&\\
+        & = \frac{2}{3} z^{3} + 5z + c && \\
+        & = \frac{2}{3} (2x - 1)^{3} + 10x + c &&
       \end{align*}
