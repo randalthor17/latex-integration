@@ -160,7 +160,7 @@
         \item $\int \frac{1}{\sqrt{x^2 - a^2}}\ \mathrm{d}x = \ln |\sqrt{x^2 - a^2} + x| + c$
         \item $\int \frac{1}{\sqrt{a^2 - x^2}}\ \mathrm{d}x = \arcsin(\frac{x}{a}) + c$
         \item $\int \sqrt{x^{2} + a^{2}}\ \mathrm{d}x = \frac{x}{2} \sqrt{x^{2} + a^{2}} + \frac{a^{2}}{2} \ln |\sqrt{x^{2} + a^{2}} + x| + c$
-        \item $\int \sqrt{x^{2}  a^{2}}\ \mathrm{d}x = \frac{x}{2} \sqrt{x^{2} - a^{2}} - \frac{a^{2}}{2} \ln |\sqrt{x^{2} - a^{2}} + x| + c$
+        \item $\int \sqrt{x^{2} - a^{2}}\ \mathrm{d}x = \frac{x}{2} \sqrt{x^{2} - a^{2}} - \frac{a^{2}}{2} \ln |\sqrt{x^{2} - a^{2}} + x| + c$
         \item $\int \sqrt{a^{2} - x^{2}}\ \mathrm{d}x = \frac{x}{2} \sqrt{a^{2} - x^{2}} + \frac{a^{2}}{2} \arcsin(\frac{x}{a}) + c$
       \end{enumerate}
 
@@ -178,7 +178,7 @@
         
         \begin{flalign*}
           \int \frac{\mathrm{d}x}{\sqrt{2x^2 + 2x + 3}}
-          & = \frac{1}{\sqrt{2}} \int \frac{\mathrm{d}x}{(x + \frac{1}{2})^2 + (\frac{\sqrt{3}}{2})^2} & \\
+          & = \frac{1}{\sqrt{2}} \int \frac{\mathrm{d}x}{\sqrt{(x + \frac{1}{2})^2 + (\frac{\sqrt{3}}{2})^2}} & \\
           & = \frac{1}{\sqrt{2}} \ln |\sqrt{x^2 + x + \frac{3}{2}} + x + \frac{1}{2}| + c 
         \end{flalign*}
 
@@ -235,7 +235,7 @@
         \textbf{Rule:} Let $cx + f$ be $z$, and apply basic formulas as necessary
       \end{center}
 
-      Examples:
+      \textbf{Examples:}
 
       \begin{align*}
         & \int \frac{4x + 3}{2x - 1} \mathrm{d}x & let\ 2x - 1 = z\ &\ \rightarrow 2x = z + 1\\
@@ -255,7 +255,7 @@
         \textbf{Rule:} Let $cx + f$ be $z^{2}$, and apply type 4 and other basic formulas as necessary
       \end{center}
 
-      Examples:
+      \textbf{Examples:}
 
       \begin{align*}
         & \int \frac{4x + 3}{\sqrt{2x - 1}} \mathrm{d}x & let\ 2x - 1 = z^{2}\ &\\
@@ -275,7 +275,7 @@
         \textbf{Rule:} Multiply both nominators and denominators by denominator and apply type 4 as necessary.
       \end{center}
 
-      Examples:
+      \textbf{Examples:}
 
       \begin{flalign*}
         \int \sqrt{\frac{5 - x}{5 + x}} \mathrm{d}x
@@ -294,7 +294,7 @@
         \textbf{Rule:} Let $ax+b=\frac{1}{z}$, and apply other rules if necessary.
       \end{center}
 
-      Examples:
+      \textbf{Examples:}
 
       \begin{flalign*}
         & \int \frac{\mathrm{d}x}{(x+1)\sqrt{3x^2+2x+1}} & let \ x+1=\frac{1}{z} \ \therefore z=\frac{1}{x+1} &\\
@@ -304,4 +304,43 @@
         & = -\frac{1}{\sqrt{2}} \int \frac{\mathrm{d}z}{\sqrt{z^2-2z+\frac{3}{2}}} \\
         & = -\frac{1}{\sqrt{2}} \int \frac{\mathrm{d}z}{\sqrt{(z-1)^2 + (\frac{1}{\sqrt{2}})^2}} \\
         & = -\frac{1}{\sqrt{2}} \ln |\sqrt{z^2 - 2z + \frac{3}{2}} + z - 1| + c;\ where\ z = \frac{1}{x+1}
+      \end{flalign*}
+
+    \subsection{Type 11: Inverse of $1\degree$ Polynomial multiplied by $n\degree$ Polynomial}
+
+      \begin{equation}
+        \int \frac{\mathrm{d}x}{x(a+bx^n)}
+      \end{equation}
+
+      \begin{center}
+        \textbf{Rule:} Let $x^n = \frac{1}{z}$ ($x^n = z$ will also work, but can be tedious), take $\ln$, and apply other rules if necessary.
+      \end{center}
+
+      \textbf{Examples:}
+
+      \begin{flalign*}
+        & \int \frac{\mathrm{d}x}{x(4+5x^{20})} & let \ x^{20}=\frac{1}{z} \ \rightarrow 20\ln{x} = -\ln{z} &\\
+        & = -\frac{1}{20} \int \frac{\mathrm{d}z}{z(4+\frac{5}{z})} & \rightarrow 20\frac{\mathrm{d}x}{x} = -\frac{\mathrm{d}z}{z} \\
+        & = -\frac{1}{20} \int \frac{\mathrm{d}z}{4z+5} \\
+        & = -\frac{1}{80}\ln{|4z+5|} + c        
+      \end{flalign*}
+
+    \subsection{Type 12: Inverse of $1\degree$ Polynomial multiplied by $\sqrt{n\degree}$ Polynomial}
+
+      \begin{equation}
+        \int \frac{\mathrm{d}x}{x\sqrt{a+bx^n}}
+      \end{equation}
+
+      \begin{center}
+        \textbf{Rule:} Let $x^n = \frac{1}{z^2}$, take $\ln$, and apply other rules if necessary.
+      \end{center}
+
+      \textbf{Examples:}
+
+      \begin{flalign*}
+        & \int \frac{\mathrm{d}x}{x\sqrt{5+x^{\frac{1}{3}}}} & let \ x^{\frac{1}{3}}=\frac{1}{z^2} \ \rightarrow \frac{1}{3}\ln{x} = -2\ln{z} &\\
+        & = -6\int \frac{\mathrm{d}z}{z\sqrt{5+\frac{1}{z^2}}} & \rightarrow \frac{1}{3}\frac{\mathrm{d}x}{x} = -2\frac{\mathrm{d}z}{z} \\
+        & = -6 \int \frac{\mathrm{d}z}{\sqrt{5z^2+1}} \\
+        & = -\frac{6}{\sqrt{5}} \int \frac{\mathrm{d}z}{\sqrt{z^2+\frac{1}{5}}} \\
+        & = -\frac{6}{\sqrt{5}} \ln|\sqrt{z^2+\frac{1}{5}} + z| + c
       \end{flalign*}
