@@ -1,0 +1,128 @@
+\section{Exponential Types}
+  \subsection{Type 1: Exponents over Exponents}
+    \begin{equation}
+      \int e^{e^{e^{e^{e^x}}}}e^{e^{e^{e^x}}}e^{e^{e^x}}e^{e^x}e^x \mathrm{d}x
+      = e^{e^{e^{e^{e^x}}}} + c
+    \end{equation}
+
+    \textbf{Explanation:}
+    \begin{equation*}
+      let\ e^{e^{e^{e^{e^x}}}} = z;\ \ 
+      \therefore \mathrm{d}z = e^{e^{e^{e^{e^x}}}}e^{e^{e^{e^x}}}e^{e^{e^x}}e^{e^x}e^x\ \mathrm{d}x
+    \end{equation*}
+
+    \textbf{Special Case:}
+    \begin{equation} 
+      \int a^{a^{a^{a^{a^x}}}}a^{a^{a^{a^x}}}a^{a^{a^x}}a^{a^x}a^x \mathrm{d}x
+      = \frac{a^{a^{a^{a^{a^x}}}}}{(\ln a)^5} + c
+    \end{equation}
+
+  \subsection{Type 2: Exponent multiplied by the sum of a multiple of a function and its derivative}
+    
+    \begin{equation}
+      \int e^{ax}\{af(x) + f'(x)\} \mathrm{d}x = e^{ax}f(x) + c
+    \end{equation}
+    \textbf{Special Case:}
+    \begin{equation}
+      \int e^x\{f(x) + f'(x)\} \mathrm{d}x = e^x f(x) + c
+    \end{equation}
+
+    \textbf{Examples:}
+    \begin{enumerate}
+      \item \begin{flalign*}
+          & \int e^x(\sin(x) + \cos(x)) \mathrm{d}x = e^x\sin(x) + c & \\
+        \end{flalign*}
+
+      \item \begin{flalign*}
+          & \int e^{5x} (5 \ln x + \frac{1}{x}) \mathrm{d}x = e^{5x} \ln x + c & \\
+        \end{flalign*}
+
+      \item \begin{flalign*}
+          & \int e^x \left(\frac{1}{x+1} - \frac{1}{(x+1)^2}\right) \mathrm{d}x = \frac{e^x}{x+1} + c & \\
+        \end{flalign*}
+
+      \item \begin{flalign*}
+          \int e^x \left(\frac{x-1}{(x+1)^3}\right) \mathrm{d}x
+          & = e^x \left(\frac{1}{x+1}^2 - \frac{2}{(x+1)^3}\right) \mathrm{d}x
+          & let\ z & = \frac{x-1}{(x+1)^3} & \\
+          & = \frac{e^x}{(x+1)^2} + c
+          & & = \frac{x+1}{(x+1)^2 (x+1)} + \frac{-2}{(x+1)^3} \\
+          & & & = \frac{1}{(x+1)^2} - \frac{2}{(x+1)^3}
+        \end{flalign*}
+
+      \item \begin{flalign*}
+          \int e^x \left(\frac{1+\sin(x)}{1+\cos(x)}\right) \mathrm{d}x
+          & = \int e^x \left(\frac{1 + 2 \sin\frac{x}{2}\cos\frac{x}{2}}{2\cos^2\frac{x}{2}}\right) \mathrm{d}x & \\
+          & = \int e^x \left(\frac{1}{2}\sec^2\frac{x}{2} + \tan\frac{x}{2}\right) \mathrm{d}x \\
+          & = e^x \tan\frac{x}{2} + c
+        \end{flalign*}
+
+      \item \begin{flalign*}
+          \int \frac{\ln x-1}{(\ln x)^2} \mathrm{d}x
+          & = \int e^z \frac{z-1}{z^2} \mathrm{d}z
+          & let\ \ln x = z & \implies x = e^z \\
+          & = \int e^z \left(\frac{1}{z} - \frac{1}{z^2}\right) \mathrm{d}z
+          & & \implies \mathrm{d}x = e^z\mathrm{d}z \\
+          & = \frac{e^z}{z} + c \\
+          & = \frac{x}{\ln x} + c
+        \end{flalign*}
+
+      % TODO: Add the rest of the examples
+    \end{enumerate}
+
+  \subsection{Type 3: Inverse of multiples of exponents or sum of multiples of exponents}
+    
+    \begin{equation}
+      \int \frac{\mathrm{d}x}{pe^{ax} + b}\ 
+      or\ \int \frac{\mathrm{d}x}{pe^{-ax} + b}\ 
+      or \int \frac{\mathrm{d}x}{pe^{ax} + qe^{-ax} + r}
+    \end{equation}
+
+    \begin{center}
+      \textbf{Rule:} multiply both nominator and denominator by the multiplicative inverse of the exponent, and use other rules as necessary.
+    \end{center}
+
+    \textbf{Examples:}
+
+    \begin{enumerate}
+      \item \begin{flalign*}
+          \int \frac{4\mathrm{d}x}{5+7e^{2x}}
+          & = \int \frac{4e^{-2x}\mathrm{d}x}{5e^{-2x} + 7}
+          & let\ 5e^{-2x} + 7 = z & \\
+          & = -\frac{4}{10}\int\frac{\mathrm{d}z}{z}
+          & \implies -10e^{-2x}\mathrm{d}x = \mathrm{d}z \\
+          & = -\frac{2}{5} \ln|5e^{-2x} + 7| + c \\
+        \end{flalign*}
+
+      \item \begin{flalign*}
+          \int \frac{3\mathrm{d}x}{2e^{5x} + 7e^{-5x} + 4}
+          & = 3\int \frac{e^{5x}\mathrm{d}x}{2(e^{5x})^2 + 7 + 4e^{5x}}
+          & let\ e^{5x} = z & \\
+          & = \frac{3}{5}\int \frac{\mathrm{d}z}{2z^2 + 4z + 7}
+          & = \implies 5e^{5x}\mathrm{d}x = \mathrm{d}z \\
+        \end{flalign*}
+    \end{enumerate}
+
+  \subsection{Type 4: Exponent of a functon multiplied by the derivative of the function}
+
+    \begin{equation}
+      \int e^{f(x)}f'(x) \mathrm{d}x = e^{f(x)} + c
+    \end{equation}
+
+    \textbf{Examples:}
+
+    \begin{enumerate}
+      \item \begin{flalign*}
+          \int \frac{e^{\arcsin x}}{\sqrt{1-x^2}}\ \mathrm{d}x
+          & = \int e^z \mathrm{d}z
+          & let\ f(x) = \arcsin x & \\
+          & = e^z = c
+          & \implies f'(x) = \frac{1}{\sqrt{1-x^2}} \\
+          & = e^{\arcsin x} + c
+        \end{flalign*}
+
+      \item \begin{flalign*}
+          \int e^{x^3}x^2 \mathrm{d}x
+          & = \frac{1}{3}e^{x^3} + c & \\
+        \end{flalign*}
+    \end{enumerate}
