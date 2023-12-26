@@ -1,0 +1,44 @@
+\section{Trigonometric Types}
+  \subsection{Type 1: $\sin$ or $\cos$ identities of $n\degree$ Polynomial, multiplied by $(n-1)\degree$ variable}
+    
+    \begin{equation}
+      \int \sin{(ax + b)}\ \mathrm{d}x \ or, \ \int \cos{(ax + b)}\ \mathrm{d}x \ or, \\\ \int px^{n-1}\sin{(ax^n + b)}\ \mathrm{d}x \ or, \ \int px^{n-1}\cos{(ax^n+b)}\ \mathrm{d}x
+    \end{equation}
+
+    \begin{center}
+      \textbf{Rule:} Let $ax^n + b$ be $z$, and apply basic formulas as necessary
+    \end{center}
+
+    \textbf{Examples:}
+
+        \begin{enumerate}
+          \item \begin{flalign*}
+              & \int \sin{(7x + 4)}\ \mathrm{d}x & let\ z = 7x + 4 & \\
+              & = \frac{1}{7} \int \sin{z}\ \mathrm{d}z & \implies \frac{1}{7}\mathrm{d}z = \mathrm{d}x & \\
+              & = -\frac{1}{7} \cos{(7x + 4)} + c 
+            \end{flalign*}
+          \item \begin{flalign*}
+              & \int x^{99} \cos{(2x^{100} + 5)}\ \mathrm{d}x & let\ z = 2x^{100} + 5 & \\
+              & = \frac{1}{200} \int \cos{z}\ \mathrm{d}z & \implies \frac{1}{200}\mathrm{d}z = x^{99}\ \mathrm{d}x & \\
+              & = \frac{1}{200} \sin{(2x^{100} + 5)} + c 
+            \end{flalign*}
+        \end{enumerate}
+
+  \subsection{Type 2: Square of $\sin$ or $\cos$ identities}
+
+    \begin{equation}
+      \int \sin^{2}{(ax + b)}\ \mathrm{d}x \ or, \ \int \cos^{2}{(ax + b)}\ \mathrm{d}x
+    \end{equation}
+
+    \begin{center}
+      \textbf{Rule:} Apply $\sin^{2}{\theta} = \frac{1}{2} (1 - \cos{2\theta})$ or $\cos^{2}{\theta} = \frac{1}{2} (1 + \cos{2\theta})$ formulas, and apply type 1 as necessary
+    \end{center}
+
+    \textbf{Examples:}
+
+        \begin{flalign*}
+          & \int \cos^{2}{(3x + 5)}\ \mathrm{d}x & \\
+          & = \frac{1}{2} \int (1 + \cos{(6x + 10)})\ \mathrm{d}x & \\
+          & = \frac{x}{2} + \frac{\sin{(6x + 10)}}{12} + c 
+        \end{flalign*}
+        
