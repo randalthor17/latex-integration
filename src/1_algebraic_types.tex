@@ -305,3 +305,42 @@
         & = -\frac{1}{\sqrt{2}} \int \frac{\mathrm{d}z}{\sqrt{(z-1)^2 + (\frac{1}{\sqrt{2}})^2}} \\
         & = -\frac{1}{\sqrt{2}} \ln |\sqrt{z^2 - 2z + \frac{3}{2}} + z - 1| + c;\ where\ z = \frac{1}{x+1}
       \end{flalign*}
+
+    \subsection{Type 11: Inverse of $1\degree$ Polynomial multiplied by $n\degree$ Polynomial}
+
+      \begin{equation}
+        \int \frac{\mathrm{d}x}{x(a+bx^n)}
+      \end{equation}
+
+      \begin{center}
+        \textbf{Rule:} Let $x^n = \frac{1}{z}$ ($x^n = z$ will also work, but can be tedious), take $\ln$, and apply other rules if necessary.
+      \end{center}
+
+      \textbf{Examples:}
+
+      \begin{flalign*}
+        & \int \frac{\mathrm{d}x}{x(4+5x^{20})} & let \ x^{20}=\frac{1}{z} \ \rightarrow 20\ln{x} = -\ln{z} &\\
+        & = -\frac{1}{20} \int \frac{\mathrm{d}z}{z(4+\frac{5}{z})} & \rightarrow 20\frac{\mathrm{d}x}{x} = -\frac{\mathrm{d}z}{z} \\
+        & = -\frac{1}{20} \int \frac{\mathrm{d}z}{4z+5} \\
+        & = -\frac{1}{80}\ln{|4z+5|} + c        
+      \end{flalign*}
+
+    \subsection{Type 12: Inverse of $1\degree$ Polynomial multiplied by $\sqrt{n\degree}$ Polynomial}
+
+      \begin{equation}
+        \int \frac{\mathrm{d}x}{x\sqrt{a+bx^n}}
+      \end{equation}
+
+      \begin{center}
+        \textbf{Rule:} Let $x^n = \frac{1}{z^2}$, take $\ln$, and apply other rules if necessary.
+      \end{center}
+
+      \textbf{Examples:}
+
+      \begin{flalign*}
+        & \int \frac{\mathrm{d}x}{x\sqrt{5+x^{\frac{1}{3}}}} & let \ x^{\frac{1}{3}}=\frac{1}{z^2} \ \rightarrow \frac{1}{3}\ln{x} = -2\ln{z} &\\
+        & = -6\int \frac{\mathrm{d}z}{z\sqrt{5+\frac{1}{z^2}}} & \rightarrow \frac{1}{3}\frac{\mathrm{d}x}{x} = -2\frac{\mathrm{d}z}{z} \\
+        & = -6 \int \frac{\mathrm{d}z}{\sqrt{5z^2+1}} \\
+        & = -\frac{6}{\sqrt{5}} \int \frac{\mathrm{d}z}{\sqrt{z^2+\frac{1}{5}}} \\
+        & = -\frac{6}{\sqrt{5}} \ln|\sqrt{z^2+\frac{1}{5}} + z| + c
+      \end{flalign*}
